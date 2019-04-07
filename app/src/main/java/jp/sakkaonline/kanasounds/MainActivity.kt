@@ -24,7 +24,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         init()
-        resetSpinners()
+        setSpinners()
 
         // Buttons
         val mStartButton1 = findViewById<Button>(R.id.start_button1) as Button
@@ -66,10 +66,15 @@ class MainActivity : AppCompatActivity() {
         Log.d("KanaSounds", "init() done")
     }
 
-    private fun resetSpinners(){
-        // Spinners
+    private fun setSpinners(){
+
         val mMenuLanguageSpinner = findViewById<View>(R.id.menu_language_spinner) as Spinner
         val mMenuLanguageSpinnerAdapter = ArrayAdapter<String>(this, android.R.layout.simple_spinner_item)
+        val mVoiceTypeSpinner = findViewById<View>(R.id.voice_type_spinner) as Spinner
+        val mVoiceTypeSpinnerAdapter = ArrayAdapter<String>(this, android.R.layout.simple_spinner_item)
+        val mLearningCharacterSpinner = findViewById<View>(R.id.learning_character_spinner) as Spinner
+        val mLearningCharacterSpinnerAdapter = ArrayAdapter<String>(this, android.R.layout.simple_spinner_item)
+
         mMenuLanguageSpinnerAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         mMenuLanguageSpinnerAdapter.add(mMenuLanguageList[0])
         mMenuLanguageSpinnerAdapter.add(mMenuLanguageList[1])
@@ -82,11 +87,22 @@ class MainActivity : AppCompatActivity() {
             override fun onItemSelected(parent1: AdapterView<*>?, view: View?, position: Int, id: Long) {
                 mMenuLanguage = mMenuLanguageSpinner.selectedItemPosition
                 changeMenuLanguage(mMenuLanguage)
-
+                mMenuLanguageSpinnerAdapter.clear()
+                mMenuLanguageSpinnerAdapter.add(mMenuLanguageList[0])
+                mMenuLanguageSpinnerAdapter.add(mMenuLanguageList[1])
+                mMenuLanguageSpinnerAdapter.add(mMenuLanguageList[2])
+                mMenuLanguageSpinnerAdapter.add(mMenuLanguageList[3])
+                mVoiceTypeSpinnerAdapter.clear()
+                mVoiceTypeSpinnerAdapter.add(mVoiceTypeList[0])
+                mVoiceTypeSpinnerAdapter.add(mVoiceTypeList[1])
+                mVoiceTypeSpinnerAdapter.add(mVoiceTypeList[2])
+                mVoiceTypeSpinnerAdapter.add(mVoiceTypeList[3])
+                mLearningCharacterSpinnerAdapter.clear()
+                mLearningCharacterSpinnerAdapter.add(mLearningCharacterList[0])
+                mLearningCharacterSpinnerAdapter.add(mLearningCharacterList[1])
             }
         }
-        val mVoiceTypeSpinner = findViewById<View>(R.id.voice_type_spinner) as Spinner
-        val mVoiceTypeSpinnerAdapter = ArrayAdapter<String>(this, android.R.layout.simple_spinner_item)
+
         mVoiceTypeSpinnerAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         mVoiceTypeSpinnerAdapter.add(mVoiceTypeList[0])
         mVoiceTypeSpinnerAdapter.add(mVoiceTypeList[1])
@@ -100,8 +116,7 @@ class MainActivity : AppCompatActivity() {
                 changeVoiceType(mVoiceType)
             }
         }
-        val mLearningCharacterSpinner = findViewById<View>(R.id.learning_character_spinner) as Spinner
-        val mLearningCharacterSpinnerAdapter = ArrayAdapter<String>(this, android.R.layout.simple_spinner_item)
+
         mLearningCharacterSpinnerAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         mLearningCharacterSpinnerAdapter.add(mLearningCharacterList[0])
         mLearningCharacterSpinnerAdapter.add(mLearningCharacterList[1])
@@ -131,11 +146,9 @@ class MainActivity : AppCompatActivity() {
         } else if (mMenuLanguage == JPN_KANJI) {
             mVoiceTypeList = JPN_KANJI_VoiceTypeList
             mLearningCharacterList = JPN_KANJI_LearningCharacterList
-        } else {
-            if (mMenuLanguage == JPN_ROMAJI) {
+        } else if (mMenuLanguage == JPN_ROMAJI) {
                 mVoiceTypeList = JPN_ROMAJI_VoiceTypeList
                 mVoiceTypeList = JPN_ROMAJI_LearningCharacterList
-            }
         }
         Log.d("KanaSounds", "changeMenuLanguage() done")
     }
