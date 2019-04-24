@@ -1,10 +1,550 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
+<LinearLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:padding="0dp"
+        android:orientation="vertical"
         tools:context=".Chart1Activity">
 
-</android.support.constraint.ConstraintLayout>
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="30dp">
+
+        <TextView
+                android:layout_height="match_parent"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:textSize="20sp"
+                android:gravity="center"/>
+
+        <TextView
+                android:text="a"
+                android:layout_height="match_parent"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:textSize="20sp"
+                android:gravity="center"/>
+
+        <TextView
+                android:text="i"
+                android:layout_height="match_parent"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:textSize="20sp"
+                android:gravity="center"/>
+
+        <TextView
+                android:text="u"
+                android:layout_height="match_parent"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:textSize="20sp"
+                android:gravity="center"/>
+
+        <TextView
+                android:text="e"
+                android:layout_height="match_parent"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:textSize="20sp"
+                android:gravity="center"/>
+
+        <TextView
+                android:text="o"
+                android:layout_height="match_parent"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:textSize="20sp"
+                android:gravity="center"/>
+
+    </LinearLayout>
+
+    <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:weightSum="6">
+
+            <TableRow>
+
+                <Button
+                        android:id="@+id/a_gyou_button"
+                        android:text="あ行"
+                        android:layout_weight="1"
+                        android:layout_margin="1dp"/>
+
+                <Button
+                        android:id="@+id/a_button"
+                        android:text="あ"
+                        android:layout_weight="1"
+                        android:layout_margin="1dp"
+                        android:background="@drawable/kana_button_state"/>
+
+                <Button
+                        android:id="@+id/i_button"
+                        android:text="い"
+                        android:layout_weight="1"
+                        android:layout_margin="1dp"
+                        android:background="@drawable/kana_button_state"/>
+
+                <Button
+                        android:id="@+id/u_button"
+                        android:text="う"
+                        android:layout_weight="1"
+                        android:layout_margin="1dp"
+                        android:background="@drawable/kana_button_state"/>
+
+                <Button
+                        android:id="@+id/e_button"
+                        android:text="え"
+                        android:layout_weight="1"
+                        android:layout_margin="1dp"
+                        android:background="@drawable/kana_button_state"/>
+
+                <Button android:id="@+id/o_button"
+                        android:text="お"
+                        android:layout_weight="1"
+                        android:layout_margin="1dp"
+                        android:background="@drawable/kana_button_state"/>
+
+            </TableRow>
+
+            <TableRow>
+
+                <Button
+                        android:id="@+id/ka_gyou_button"
+                        android:text="か行"
+                        android:layout_weight="1"
+                        android:layout_margin="1dp"/>
+
+                <Button
+                        android:id="@+id/ka_button"
+                        android:text="か"
+                        android:layout_weight="1"
+                        android:layout_margin="1dp"
+                        android:background="@drawable/kana_button_state"/>
+
+                <Button
+                        android:id="@+id/ki_button"
+                        android:text="き"
+                        android:layout_weight="1"
+                        android:layout_margin="1dp"
+                        android:background="@drawable/kana_button_state"/>
+
+                <Button android:id="@+id/ku_button"
+                        android:text="く"
+                        android:layout_weight="1"
+                        android:layout_margin="1dp"
+                        android:background="@drawable/kana_button_state"/>
+
+                <Button
+                        android:id="@+id/ke_button"
+                        android:text="け"
+                        android:layout_weight="1"
+                        android:layout_margin="1dp"
+                        android:background="@drawable/kana_button_state"/>
+
+                <Button
+                        android:id="@+id/ko_button"
+                        android:text="こ"
+                        android:layout_weight="1"
+                        android:layout_margin="1dp"
+                        android:background="@drawable/kana_button_state"/>
+
+            </TableRow>
+
+            <TableRow>
+
+                <Button
+                        android:id="@+id/sa_gyou_button"
+                        android:text="さ行"
+                        android:layout_weight="1"
+                        android:layout_margin="1dp"/>
+
+                <Button
+                        android:id="@+id/sa_button"
+                        android:text="さ"
+                        android:layout_weight="1"
+                        android:layout_margin="1dp"
+                        android:background="@drawable/kana_button_state"/>
+
+                <Button
+                        android:id="@+id/si_button"
+                        android:text="し"
+                        android:layout_weight="1"
+                        android:layout_margin="1dp"
+                        android:background="@drawable/kana_button_state"/>
+
+                <Button
+                        android:id="@+id/su_button"
+                        android:text="す"
+                        android:layout_weight="1"
+                        android:layout_margin="1dp"
+                        android:background="@drawable/kana_button_state"/>
+
+                <Button android:id="@+id/se_button"
+                        android:text="せ"
+                        android:layout_weight="1"
+                        android:layout_margin="1dp"
+                        android:background="@drawable/kana_button_state"/>
+
+                <Button
+                        android:id="@+id/so_button"
+                        android:text="そ"
+                        android:layout_weight="1"
+                        android:layout_margin="1dp"
+                        android:background="@drawable/kana_button_state"/>
+
+            </TableRow>
+
+            <TableRow>
+
+                <Button
+                        android:id="@+id/ta_gyou_button"
+                        android:text="た行"
+                        android:layout_weight="1"
+                        android:layout_margin="1dp"/>
+
+                <Button
+                        android:id="@+id/ta_button"
+                        android:text="た"
+                        android:layout_weight="1"
+                        android:layout_margin="1dp"
+                        android:background="@drawable/kana_button_state"/>
+
+                <Button
+                        android:id="@+id/ti_button"
+                        android:text="ち"
+                        android:layout_weight="1"
+                        android:layout_margin="1dp"
+                        android:background="@drawable/kana_button_state"/>
+
+                <Button
+                        android:id="@+id/tu_button"
+                        android:text="つ"
+                        android:layout_weight="1"
+                        android:layout_margin="1dp"
+                        android:background="@drawable/kana_button_state"/>
+
+                <Button
+                        android:id="@+id/te_button"
+                        android:text="て"
+                        android:layout_weight="1"
+                        android:layout_margin="1dp"
+                        android:background="@drawable/kana_button_state"/>
+
+                <Button
+                        android:id="@+id/to_button"
+                        android:text="と"
+                        android:layout_weight="1"
+                        android:layout_margin="1dp"
+                        android:background="@drawable/kana_button_state"/>
+
+            </TableRow>
+
+            <TableRow>
+
+                <Button
+                        android:id="@+id/na_gyou_button"
+                        android:text="な行"
+                        android:layout_weight="1"
+                        android:layout_margin="1dp"/>
+
+                <Button
+                        android:id="@+id/na_button"
+                        android:text="な"
+                        android:layout_weight="1"
+                        android:layout_margin="1dp"
+                        android:background="@drawable/kana_button_state"/>
+
+                <Button
+                        android:id="@+id/ni_button"
+                        android:text="に"
+                        android:layout_weight="1"
+                        android:layout_margin="1dp"
+                        android:background="@drawable/kana_button_state"/>
+
+                <Button
+                        android:id="@+id/nu_button"
+                        android:text="ぬ"
+                        android:layout_weight="1"
+                        android:layout_margin="1dp"
+                        android:background="@drawable/kana_button_state"/>
+
+                <Button
+                        android:id="@+id/ne_button"
+                        android:text="ね"
+                        android:layout_weight="1"
+                        android:layout_margin="1dp"
+                        android:background="@drawable/kana_button_state"/>
+
+                <Button
+                        android:id="@+id/no_button"
+                        android:text="の"
+                        android:layout_weight="1"
+                        android:layout_margin="1dp"
+                        android:background="@drawable/kana_button_state"/>
+
+            </TableRow>
+
+            <TableRow>
+
+                <Button
+                        android:id="@+id/ha_gyou_button"
+                        android:text="は行"
+                        android:layout_weight="1"
+                        android:layout_margin="1dp"/>
+
+                <Button
+                        android:id="@+id/ha_button"
+                        android:text="は"
+                        android:layout_weight="1"
+                        android:layout_margin="1dp"
+                        android:background="@drawable/kana_button_state"/>
+
+                <Button
+                        android:id="@+id/hi_button"
+                        android:text="ひ"
+                        android:layout_weight="1"
+                        android:layout_margin="1dp"
+                        android:background="@drawable/kana_button_state"/>
+
+                <Button
+                        android:id="@+id/hu_button"
+                        android:text="ふ"
+                        android:layout_weight="1"
+                        android:layout_margin="1dp"
+                        android:background="@drawable/kana_button_state"/>
+
+                <Button
+                        android:id="@+id/he_button"
+                        android:text="へ"
+                        android:layout_weight="1"
+                        android:layout_margin="1dp"
+                        android:background="@drawable/kana_button_state"/>
+
+                <Button
+                        android:id="@+id/ho_button"
+                        android:text="ほ"
+                        android:layout_weight="1"
+                        android:layout_margin="1dp"
+                        android:background="@drawable/kana_button_state"/>
+
+            </TableRow>
+
+            <TableRow>
+
+                <Button
+                        android:id="@+id/ma_gyou_button"
+                        android:text="ま行"
+                        android:layout_weight="1"
+                        android:layout_margin="1dp"/>
+
+                <Button
+                        android:id="@+id/ma_button"
+                        android:text="ま"
+                        android:layout_weight="1"
+                        android:layout_margin="1dp"
+                        android:background="@drawable/kana_button_state"/>
+
+                <Button
+                        android:id="@+id/mi_button"
+                        android:text="み"
+                        android:layout_weight="1"
+                        android:layout_margin="1dp"
+                        android:background="@drawable/kana_button_state"/>
+
+                <Button
+                        android:id="@+id/mu_button"
+                        android:text="む"
+                        android:layout_weight="1"
+                        android:layout_margin="1dp"
+                        android:background="@drawable/kana_button_state"/>
+
+                <Button
+                        android:id="@+id/me_button"
+                        android:text="め"
+                        android:layout_weight="1"
+                        android:layout_margin="1dp"
+                        android:background="@drawable/kana_button_state"/>
+
+                <Button
+                        android:id="@+id/mo_button"
+                        android:text="も"
+                        android:layout_weight="1"
+                        android:layout_margin="1dp"
+                        android:background="@drawable/kana_button_state"/>
+
+            </TableRow>
+
+            <TableRow>
+
+                <Button
+                        android:id="@+id/ya_gyou_button"
+                        android:text="や行"
+                        android:layout_weight="1"
+                        android:layout_margin="1dp"/>
+
+                <Button
+                        android:id="@+id/ya_button"
+                        android:text="や"
+                        android:layout_weight="1"
+                        android:layout_margin="1dp"
+                        android:background="@drawable/kana_button_state"/>
+
+                <Space
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:layout_margin="1dp"/>
+
+                <Button
+                        android:id="@+id/yu_button"
+                        android:text="ゆ"
+                        android:layout_weight="1"
+                        android:layout_margin="1dp"
+                        android:background="@drawable/kana_button_state"/>
+
+                <Space
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:layout_margin="1dp"/>
+
+                <Button
+                        android:id="@+id/yo_button"
+                        android:text="よ"
+                        android:layout_weight="1"
+                        android:layout_margin="1dp"
+                        android:background="@drawable/kana_button_state"/>
+
+            </TableRow>
+
+            <TableRow>
+
+                <Button
+                        android:id="@+id/ra_gyou_button"
+                        android:text="ら行"
+                        android:layout_weight="1"
+                        android:layout_margin="1dp"/>
+
+                <Button
+                        android:id="@+id/ra_button"
+                        android:text="ら"
+                        android:layout_weight="1"
+                        android:layout_margin="1dp"
+                        android:background="@drawable/kana_button_state"/>
+
+                <Button
+                        android:id="@+id/ri_button"
+                        android:text="り"
+                        android:layout_weight="1"
+                        android:layout_margin="1dp"
+                        android:background="@drawable/kana_button_state"/>
+
+                <Button android:id="@+id/ru_button"
+                        android:text="る"
+                        android:layout_weight="1"
+                        android:layout_margin="1dp"
+                        android:background="@drawable/kana_button_state"/>
+
+                <Button
+                        android:id="@+id/re_button"
+                        android:text="れ"
+                        android:layout_weight="1"
+                        android:layout_margin="1dp"
+                        android:background="@drawable/kana_button_state"/>
+
+                <Button
+                        android:id="@+id/ro_button"
+                        android:text="ろ"
+                        android:layout_weight="1"
+                        android:layout_margin="1dp"
+                        android:background="@drawable/kana_button_state"/>
+
+            </TableRow>
+
+            <TableRow>
+
+                <Button
+                        android:id="@+id/wa_gyou_button"
+                        android:text="わ行"
+                        android:layout_weight="1"
+                        android:layout_margin="1dp"/>
+
+                <Button
+                        android:id="@+id/wa_button"
+                        android:text="わ"
+                        android:layout_weight="1"
+                        android:layout_margin="1dp"
+                        android:background="@drawable/kana_button_state"/>
+
+                <Space
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:layout_margin="1dp"/>
+
+                <Space
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:layout_margin="1dp"/>
+
+                <Space
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:layout_margin="1dp"/>
+
+                <Button
+                        android:id="@+id/wo_button"
+                        android:text="を"
+                        android:layout_weight="1"
+                        android:layout_margin="1dp"
+                        android:background="@drawable/kana_button_state"/>
+
+            </TableRow>
+
+            <TableRow>
+
+                <Space
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:layout_margin="1dp"/>
+
+                <Button
+                        android:id="@+id/n_button"
+                        android:text="ん"
+                        android:layout_weight="1"
+                        android:layout_margin="1dp"
+                        android:background="@drawable/kana_button_state"/>
+
+                <Space
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:layout_margin="1dp"/>
+
+                <Space
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:layout_margin="1dp"/>
+
+                <Space
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:layout_margin="1dp"/>
+
+                <Space
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:layout_margin="1dp"/>
+
+            </TableRow>
+
+        </TableLayout>
+
+    </ScrollView>
+
+</LinearLayout>
+
