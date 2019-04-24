@@ -1,6 +1,7 @@
 package jp.sakkaonline.kanasounds
 
 import android.content.Context
+import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -36,14 +37,6 @@ val JPN_KANJI_VoiceTypeList = listOf<String>("男性 Ａ", "男性 Ｂ", "女性
 val JPN_KANJI_LearningCharacterList = listOf<String>("平仮名", "片仮名")
 val JPN_ROMAJI_VoiceTypeList = listOf<String>("Dansei A", "Dansei B", "Jyosei A", "Jyosei B")
 val JPN_ROMAJI_LearningCharacterList = listOf<String>("Hiragana", "Katakana")
-val HiraganaList: List<String> = listOf(
-    "あ", "い", "う", "え", "お", "か", "き", "く", "け", "こ",
-    "さ", "し", "す", "せ", "そ", "た", "ち", "つ", "て", "と", "な", "に", "ぬ", "ね", "の"
-)
-val KatakanaList: List<String> = listOf(
-    "ア", "イ", "ウ", "エ", "オ", "カ", "キ", "ク", "ケ", "コ",
-    "サ", "シ", "ス", "セ", "ソ", "タ", "チ", "ツ", "テ", "ト", "ナ", "ニ", "ヌ", "ネ", "ノ"
-)
 
 var mMenuLanguage = 0
 var mVoiceType = 0
@@ -125,16 +118,21 @@ class MainActivity : AppCompatActivity() {
         }
 
         // Buttons
-        val mStartButton1 = findViewById<Button>(R.id.start_button1) as Button
-        mStartButton1.setOnClickListener { Log.d("KanaSounds", "Button1") }
-        val mStartButton2 = findViewById<Button>(R.id.start_button2) as Button
-        mStartButton2.setOnClickListener { Log.d("KanaSounds", "Button2") }
-        val mStartButton3 = findViewById<Button>(R.id.start_button3) as Button
-        mStartButton3.setOnClickListener { Log.d("KanaSounds", "Button3") }
-        val mStartButton4 = findViewById<Button>(R.id.start_button4) as Button
-        mStartButton4.setOnClickListener { Log.d("KanaSounds", "Button4") }
-        val mStartButton5 = findViewById<Button>(R.id.start_button5) as Button
-        mStartButton5.setOnClickListener { Log.d("KanaSounds", "Button5") }
+        val mStartButton1 = findViewById<View>(R.id.start_button1) as Button
+        mStartButton1.setOnClickListener { val intent = Intent(this, Chart1Activity::class.java)
+            startActivity(intent) }
+        val mStartButton2 = findViewById<View>(R.id.start_button2) as Button
+        mStartButton2.setOnClickListener { val intent = Intent(this, Chart2Activity::class.java)
+            startActivity(intent) }
+        val mStartButton3 = findViewById<View>(R.id.start_button3) as Button
+        mStartButton3.setOnClickListener { val intent = Intent(this, Chart3Activity::class.java)
+            startActivity(intent) }
+        val mStartButton4 = findViewById<View>(R.id.start_button4) as Button
+        mStartButton4.setOnClickListener { val intent = Intent(this, Chart4Activity::class.java)
+            startActivity(intent) }
+        val mStartButton5 = findViewById<View>(R.id.start_button5) as Button
+        mStartButton5.setOnClickListener { val intent = Intent(this, Chart5Activity::class.java)
+            startActivity(intent) }
     }
 
     override fun onResume() {
