@@ -12,7 +12,7 @@
 
     <ImageView
             android:layout_width="wrap_content"
-            android:layout_height="100dp"
+            android:layout_height="60dp"
             android:paddingBottom="20dp"
             android:id="@+id/logo_img"
             android:src="@drawable/kanasoundslogo"
@@ -23,7 +23,7 @@
             android:layout_height="match_parent"
             android:orientation="horizontal"
             android:paddingTop="10dp"
-            android:paddingBottom="15dp">
+            android:paddingBottom="10dp">
 
         <TextView
                 android:id="@+id/menu_language_text"
@@ -47,7 +47,7 @@
             android:layout_height="match_parent"
             android:orientation="horizontal"
             android:paddingTop="10dp"
-            android:paddingBottom="15dp">
+            android:paddingBottom="10dp">
 
         <TextView
                 android:id="@+id/voice_type_text"
@@ -71,7 +71,7 @@
             android:layout_height="match_parent"
             android:orientation="horizontal"
             android:paddingTop="10dp"
-            android:paddingBottom="15dp">
+            android:paddingBottom="10dp">
 
         <TextView
                 android:id="@+id/learning_character_text"
@@ -94,7 +94,6 @@
             android:id="@+id/start_button1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="5dp"
             android:gravity="center"
             android:text="start1 ５０音"
     />
@@ -103,7 +102,6 @@
             android:id="@+id/start_button2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="5dp"
             android:gravity="center"
             android:text="start2 濁音"
     />
@@ -112,7 +110,6 @@
             android:id="@+id/start_button3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="5dp"
             android:gravity="center"
             android:text="start3 半濁音"
     />
@@ -121,7 +118,6 @@
             android:id="@+id/start_button4"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="5dp"
             android:gravity="center"
             android:text="start4 拗音"
     />
@@ -130,9 +126,16 @@
             android:id="@+id/start_button5"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="5dp"
             android:gravity="center"
             android:text="start5 拗濁音"
+    />
+
+    <Button
+            android:id="@+id/start_button6"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="start6 半拗濁音"
     />
 
 </LinearLayout>
