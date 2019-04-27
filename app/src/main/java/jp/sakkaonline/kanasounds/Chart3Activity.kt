@@ -14,13 +14,14 @@ class Chart3Activity : AppCompatActivity() {
         menuInflater.inflate(R.menu.menu_toolbar, menu)
         return super.onCreateOptionsMenu(menu)
     }
+
     override fun onOptionsItemSelected(item: MenuItem)= when (item.itemId) {
-        R.id.action_back_to_left -> {
+        R.id.action_back -> {
             val intent = Intent(this, Chart2Activity::class.java)
             startActivity(intent)
             true
         }
-        R.id.action_go_to_right -> {
+        R.id.action_go -> {
             val intent = Intent(this, Chart4Activity::class.java)
             startActivity(intent)
             true
@@ -31,6 +32,7 @@ class Chart3Activity : AppCompatActivity() {
             super.onOptionsItemSelected(item)
         }
     }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_chart3)

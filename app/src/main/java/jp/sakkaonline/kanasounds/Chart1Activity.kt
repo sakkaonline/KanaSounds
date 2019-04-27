@@ -9,9 +9,7 @@ import android.view.Menu
 import android.view.MenuItem
 import android.view.View
 import android.widget.Button
-import android.widget.Toast
 
-val Seion_Max_Number = 45
 val Seion_HiraganaList: List<String> = listOf(
     "あ", "い", "う", "え", "お",
     "か", "き", "く", "け", "こ",
@@ -34,7 +32,18 @@ val Seion_KatakanaList: List<String> = listOf(
     "ヤ", "ユ", "ヨ",
     "ラ", "リ", "ル", "レ", "ロ",
     "ワ", "ヲ", "ン")
-var mSet_KanaList = Seion_HiraganaList
+val Seion_RomajiList: List<String> = listOf(
+    "A", "I", "U", "E", "O",
+    "Ka", "Ki", "Ku", "Ke", "Ko",
+    "Sa", "Si", "Su", "Se", "So",
+    "Ta", "Ti", "Tu", "Te", "To",
+    "Na", "Ni", "Nu", "Ne", "No",
+    "Ha", "Hi", "Hu", "He", "Ho",
+    "Ma", "Mi", "Mu", "Me", "Mo",
+    "Ya", "Yu", "Yo",
+    "Ra", "Ri", "Ru", "Re", "Ro",
+    "Wa", "Wo", "N")
+var mSet_Seion_KanaList = Seion_HiraganaList
 
 class Chart1Activity : AppCompatActivity() {
 
@@ -42,14 +51,15 @@ class Chart1Activity : AppCompatActivity() {
         menuInflater.inflate(R.menu.menu_toolbar, menu)
         return super.onCreateOptionsMenu(menu)
     }
+
     override fun onOptionsItemSelected(item: MenuItem)= when (item.itemId) {
-        R.id.action_go_to_right -> {
-            val intent = Intent(this, Chart2Activity::class.java)
+        R.id.action_back -> {
+            val intent = Intent(this, Chart6Activity::class.java)
             startActivity(intent)
             true
         }
-        R.id.action_back_to_left -> {
-            val intent = Intent(this, Chart6Activity::class.java)
+        R.id.action_go -> {
+            val intent = Intent(this, Chart2Activity::class.java)
             startActivity(intent)
             true
         }
@@ -68,10 +78,12 @@ class Chart1Activity : AppCompatActivity() {
         setSupportActionBar(toolbar1)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
-        if (mLearningCharacter == KATAKANA){
-            mSet_KanaList = Seion_KatakanaList
+        if (mLearningCharacter == HIRAGANA) {
+            mSet_Seion_KanaList = Seion_HiraganaList
+        } else if (mLearningCharacter == KATAKANA){
+            mSet_Seion_KanaList = Seion_KatakanaList
         } else {
-            mSet_KanaList = Seion_HiraganaList
+            mSet_Seion_KanaList = Seion_RomajiList
         }
 
         // Buttons
@@ -125,7 +137,7 @@ class Chart1Activity : AppCompatActivity() {
             )
 
         for (i in mButtons.indices){
-            mButtons[i].setText(mSet_KanaList[i])
+            mButtons[i].setText(mSet_Seion_KanaList[i])
             mButtons[i].setOnClickListener{Log.d("KanaSounds", "$i")}
             }
 

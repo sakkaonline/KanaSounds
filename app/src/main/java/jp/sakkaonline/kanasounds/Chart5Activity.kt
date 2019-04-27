@@ -14,13 +14,14 @@ class Chart5Activity : AppCompatActivity() {
         menuInflater.inflate(R.menu.menu_toolbar, menu)
         return super.onCreateOptionsMenu(menu)
     }
+
     override fun onOptionsItemSelected(item: MenuItem)= when (item.itemId) {
-        R.id.action_back_to_left -> {
+        R.id.action_back -> {
             val intent = Intent(this, Chart4Activity::class.java)
             startActivity(intent)
             true
         }
-        R.id.action_go_to_right -> {
+        R.id.action_go -> {
             val intent = Intent(this, Chart6Activity::class.java)
             startActivity(intent)
             true

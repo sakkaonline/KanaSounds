@@ -28,15 +28,16 @@ const val WOMAN_B = 3
 
 const val HIRAGANA = 0
 const val KATAKANA = 1
+const val ROMAJI = 2
 
 val ENGLISH_VoiceTypeList = listOf<String>("Man A", "Man B", "Woman A", "Woman B")
-val ENGLISH_LearningCharacterList = listOf<String>("Hiragana", "Katakana")
+val ENGLISH_LearningCharacterList = listOf<String>("Hiragana", "Katakana","Ro-ma Ji")
 val JPN_HIRAGANA_VoiceTypeList = listOf<String>("だんせい Ａ", "だんせい Ｂ", "じょせい Ａ", "じょせい Ｂ")
-val JPN_HIRAGANA_LearningCharacterList = listOf<String>("ひらがな", "かたかな")
+val JPN_HIRAGANA_LearningCharacterList = listOf<String>("ひらがな", "かたかな","ろーまじ")
 val JPN_KANJI_VoiceTypeList = listOf<String>("男性 Ａ", "男性 Ｂ", "女性 A", "女性 B")
-val JPN_KANJI_LearningCharacterList = listOf<String>("平仮名", "片仮名")
+val JPN_KANJI_LearningCharacterList = listOf<String>("平仮名", "片仮名","ローマ字")
 val JPN_ROMAJI_VoiceTypeList = listOf<String>("Dansei A", "Dansei B", "Jyosei A", "Jyosei B")
-val JPN_ROMAJI_LearningCharacterList = listOf<String>("Hiragana", "Katakana")
+val JPN_ROMAJI_LearningCharacterList = listOf<String>("Hiragana", "Katakana","Ro-ma ji")
 
 var mMenuLanguage = 0
 var mVoiceType = 0
@@ -88,6 +89,7 @@ class MainActivity : AppCompatActivity() {
                 mLearningCharacterSpinnerAdapter.clear()
                 mLearningCharacterSpinnerAdapter.add(mLearningCharacterList[0])
                 mLearningCharacterSpinnerAdapter.add(mLearningCharacterList[1])
+                mLearningCharacterSpinnerAdapter.add(mLearningCharacterList[2])
             }
         }
 
@@ -109,6 +111,7 @@ class MainActivity : AppCompatActivity() {
         mLearningCharacterSpinnerAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         mLearningCharacterSpinnerAdapter.add(mLearningCharacterList[0])
         mLearningCharacterSpinnerAdapter.add(mLearningCharacterList[1])
+        mLearningCharacterSpinnerAdapter.add(mLearningCharacterList[2])
         mLearningCharacterSpinner.adapter = mLearningCharacterSpinnerAdapter
         mLearningCharacterSpinner.setSelection(mLearningCharacter)
         mLearningCharacterSpinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
