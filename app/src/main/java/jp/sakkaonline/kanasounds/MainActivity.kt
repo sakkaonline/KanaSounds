@@ -123,37 +123,26 @@ class MainActivity : AppCompatActivity() {
         val mStartButton1 = findViewById<View>(R.id.start_button1) as Button
         mStartButton1.setOnClickListener {
             val intent = Intent(this, Chart1Activity::class.java)
-            intent.putExtra("mMenuLanguage",mMenuLanguage)
-            intent.putExtra("mVoiceType", mVoiceType)
-            intent.putExtra("mLearningCharacter", mLearningCharacter)
             startActivity(intent) }
         val mStartButton2 = findViewById<Button>(R.id.start_button2) as Button
         mStartButton2.setOnClickListener {
             val intent = Intent(this, Chart2Activity::class.java)
-            intent.putExtra("mMenuLanguage",mMenuLanguage)
-            intent.putExtra("mVoiceType", mVoiceType)
-            intent.putExtra("mLearningCharacter", mLearningCharacter)
             startActivity(intent) }
         val mStartButton3 = findViewById<Button>(R.id.start_button3) as Button
         mStartButton3.setOnClickListener {
             val intent = Intent(this, Chart3Activity::class.java)
-            intent.putExtra("mMenuLanguage",mMenuLanguage)
-            intent.putExtra("mVoiceType", mVoiceType)
-            intent.putExtra("mLearningCharacter", mLearningCharacter)
             startActivity(intent) }
         val mStartButton4 = findViewById<Button>(R.id.start_button4) as Button
         mStartButton4.setOnClickListener {
             val intent = Intent(this, Chart4Activity::class.java)
-            intent.putExtra("mMenuLanguage",mMenuLanguage)
-            intent.putExtra("mVoiceType", mVoiceType)
-            intent.putExtra("mLearningCharacter", mLearningCharacter)
             startActivity(intent) }
         val mStartButton5 = findViewById<Button>(R.id.start_button5) as Button
         mStartButton5.setOnClickListener {
             val intent = Intent(this, Chart5Activity::class.java)
-            intent.putExtra("mMenuLanguage",mMenuLanguage)
-            intent.putExtra("mVoiceType", mVoiceType)
-            intent.putExtra("mLearningCharacter", mLearningCharacter)
+            startActivity(intent) }
+        val mStartButton6 = findViewById<Button>(R.id.start_button6) as Button
+        mStartButton6.setOnClickListener {
+            val intent = Intent(this, Chart6Activity::class.java)
             startActivity(intent) }
     }
 
