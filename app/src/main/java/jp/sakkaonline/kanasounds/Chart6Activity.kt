@@ -4,9 +4,19 @@ import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.v7.widget.Toolbar
+import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
+import android.widget.Button
+
+val chart6HiraganaList: List<String> = listOf(
+    "ぴゃ", "ぴゅ", "ぴょ")
+val chart6KatakanaList: List<String> = listOf(
+    "ピャ", "ピュ", "ピョ")
+val chart6RomajiList: List<String> = listOf(
+    "Pya", "Pyu", "Pyo")
+var chart6SetKanaList = chart6HiraganaList
 
 class Chart6Activity : AppCompatActivity() {
 
@@ -40,6 +50,26 @@ class Chart6Activity : AppCompatActivity() {
         val toolbar6 = findViewById<View>(R.id.toolbar6) as Toolbar
         setSupportActionBar(toolbar6)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
-    }
 
+        if (mLearningCharacter == HIRAGANA) {
+            chart6SetKanaList = chart6HiraganaList
+        } else if (mLearningCharacter == KATAKANA){
+            chart6SetKanaList = chart6KatakanaList
+        } else {
+            chart6SetKanaList = chart6RomajiList
+        }
+
+        // Buttons
+        val mButtons = arrayOf(
+            findViewById<View>(R.id.pya_button) as Button,
+            findViewById<View>(R.id.pyu_button) as Button,
+            findViewById<View>(R.id.pyo_button) as Button
+        )
+
+        for (i in mButtons.indices){
+        mButtons[i].setText(chart6SetKanaList[i])
+        mButtons[i].setOnClickListener{ Log.d("KanaSounds", "$i")}
+    }
+    Log.d("KanaSounds", "finish")
+}
 }

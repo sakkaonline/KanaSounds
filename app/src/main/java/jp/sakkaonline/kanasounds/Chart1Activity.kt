@@ -10,7 +10,7 @@ import android.view.MenuItem
 import android.view.View
 import android.widget.Button
 
-val Seion_HiraganaList: List<String> = listOf(
+val chart1HiraganaList: List<String> = listOf(
     "あ", "い", "う", "え", "お",
     "か", "き", "く", "け", "こ",
     "さ", "し", "す", "せ", "そ",
@@ -21,7 +21,7 @@ val Seion_HiraganaList: List<String> = listOf(
     "や", "ゆ", "よ",
     "ら", "り", "る", "れ", "ろ",
     "わ", "を", "ん")
-val Seion_KatakanaList: List<String> = listOf(
+val chart1KatakanaList: List<String> = listOf(
     "ア", "イ", "ウ", "エ", "オ",
     "カ", "キ", "ク", "ケ", "コ",
     "サ", "シ", "ス", "セ", "ソ",
@@ -32,7 +32,7 @@ val Seion_KatakanaList: List<String> = listOf(
     "ヤ", "ユ", "ヨ",
     "ラ", "リ", "ル", "レ", "ロ",
     "ワ", "ヲ", "ン")
-val Seion_RomajiList: List<String> = listOf(
+val chart1RomajiList: List<String> = listOf(
     "A", "I", "U", "E", "O",
     "Ka", "Ki", "Ku", "Ke", "Ko",
     "Sa", "Si", "Su", "Se", "So",
@@ -43,7 +43,7 @@ val Seion_RomajiList: List<String> = listOf(
     "Ya", "Yu", "Yo",
     "Ra", "Ri", "Ru", "Re", "Ro",
     "Wa", "Wo", "N")
-var mSet_Seion_KanaList = Seion_HiraganaList
+var chart1SetKanaList = chart1HiraganaList
 
 class Chart1Activity : AppCompatActivity() {
 
@@ -79,11 +79,11 @@ class Chart1Activity : AppCompatActivity() {
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         if (mLearningCharacter == HIRAGANA) {
-            mSet_Seion_KanaList = Seion_HiraganaList
+            chart1SetKanaList = chart1HiraganaList
         } else if (mLearningCharacter == KATAKANA){
-            mSet_Seion_KanaList = Seion_KatakanaList
+            chart1SetKanaList = chart1KatakanaList
         } else {
-            mSet_Seion_KanaList = Seion_RomajiList
+            chart1SetKanaList = chart1RomajiList
         }
 
         // Buttons
@@ -137,7 +137,7 @@ class Chart1Activity : AppCompatActivity() {
             )
 
         for (i in mButtons.indices){
-            mButtons[i].setText(mSet_Seion_KanaList[i])
+            mButtons[i].setText(chart1SetKanaList [i])
             mButtons[i].setOnClickListener{Log.d("KanaSounds", "$i")}
             }
 

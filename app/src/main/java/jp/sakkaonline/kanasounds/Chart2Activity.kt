@@ -10,22 +10,22 @@ import android.view.MenuItem
 import android.view.View
 import android.widget.Button
 
-val Dakuon_HiraganaList: List<String> = listOf(
+val chart2HiraganaList: List<String> = listOf(
     "が", "ぎ", "ぐ", "げ", "ご",
     "ざ", "じ", "ず", "ぜ", "ぞ",
     "だ", "ぢ", "づ", "で", "ど",
     "ば", "び", "ぶ", "べ", "ぼ")
-val Dakuon_KatakanaList: List<String> = listOf(
+val chart2KatakanaList: List<String> = listOf(
     "ガ", "ギ", "グ", "ゲ", "ゴ",
     "ザ", "ジ", "ズ", "ゼ", "ゾ",
     "ダ", "ヂ", "ヅ", "デ", "ド",
     "バ", "ビ", "ブ", "ベ", "ボ")
-val Dakuon_RomajiList: List<String> = listOf(
+val chart2RomajiList: List<String> = listOf(
     "Ga", "Gi", "Gu", "Ge", "Go",
     "Za", "Zi", "Zu", "Ze", "Zo",
     "Da", "Di", "Du", "De", "Do",
     "Ba", "Bi", "Bu", "Be", "Bo")
-var mSet_Dakuon_KanaList = Dakuon_HiraganaList
+var chart2SetKanaList = chart2HiraganaList
 
 class Chart2Activity : AppCompatActivity() {
 
@@ -61,11 +61,11 @@ class Chart2Activity : AppCompatActivity() {
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         if (mLearningCharacter == HIRAGANA) {
-            mSet_Dakuon_KanaList = Dakuon_HiraganaList
+            chart2SetKanaList = chart2HiraganaList
         } else if (mLearningCharacter == KATAKANA){
-            mSet_Dakuon_KanaList = Dakuon_KatakanaList
+            chart2SetKanaList = chart2KatakanaList
         } else {
-            mSet_Dakuon_KanaList = Dakuon_RomajiList
+            chart2SetKanaList = chart2RomajiList
         }
 
         // Buttons
@@ -93,15 +93,9 @@ class Chart2Activity : AppCompatActivity() {
         )
 
         for (i in mButtons.indices){
-            mButtons[i].setText(mSet_Dakuon_KanaList[i])
+            mButtons[i].setText(chart2SetKanaList[i])
+            mButtons[i].setOnClickListener{Log.d("KanaSounds", "$i")}
         }
-
-        mButtons.forEachIndexed { index, button ->
-            button.setOnClickListener {
-                Log.d("KanaSounds", "button")
-            }
-        }
-
         Log.d("KanaSounds", "finish")
     }
 }
