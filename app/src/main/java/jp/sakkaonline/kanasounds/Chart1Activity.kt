@@ -1,10 +1,15 @@
 package jp.sakkaonline.kanasounds
 
+import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.support.v7.widget.Toolbar
 import android.util.Log
+import android.view.Menu
+import android.view.MenuItem
 import android.view.View
 import android.widget.Button
+import android.widget.Toast
 
 val Seion_Max_Number = 45
 val Seion_HiraganaList: List<String> = listOf(
@@ -33,11 +38,35 @@ var mSet_KanaList = Seion_HiraganaList
 
 class Chart1Activity : AppCompatActivity() {
 
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.menu_toolbar, menu)
+        return super.onCreateOptionsMenu(menu)
+    }
+    override fun onOptionsItemSelected(item: MenuItem)= when (item.itemId) {
+        R.id.action_go_to_right -> {
+            val intent = Intent(this, Chart2Activity::class.java)
+            startActivity(intent)
+            true
+        }
+        R.id.action_back_to_left -> {
+            val intent = Intent(this, Chart6Activity::class.java)
+            startActivity(intent)
+            true
+        }
+        else -> {
+            // If we got here, the user's action was not recognized.
+            // Invoke the superclass to handle it.
+            super.onOptionsItemSelected(item)
+        }
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_chart1)
 
-        Log.d("KanaSounds","mLearningCharacter $mLearningCharacter")
+        val toolbar1 = findViewById<View>(R.id.toolbar1) as Toolbar
+        setSupportActionBar(toolbar1)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         if (mLearningCharacter == KATAKANA){
             mSet_KanaList = Seion_KatakanaList
