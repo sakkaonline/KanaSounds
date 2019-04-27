@@ -80,34 +80,29 @@
 
                 <Button
                         android:id="@+id/a_button"
-                        android:text="あ"
                         android:layout_weight="1"
                         android:layout_margin="1dp"
                         android:background="@drawable/kana_button_state"/>
 
                 <Button
                         android:id="@+id/i_button"
-                        android:text="い"
                         android:layout_weight="1"
                         android:layout_margin="1dp"
                         android:background="@drawable/kana_button_state"/>
 
                 <Button
                         android:id="@+id/u_button"
-                        android:text="う"
                         android:layout_weight="1"
                         android:layout_margin="1dp"
                         android:background="@drawable/kana_button_state"/>
 
                 <Button
                         android:id="@+id/e_button"
-                        android:text="え"
                         android:layout_weight="1"
                         android:layout_margin="1dp"
                         android:background="@drawable/kana_button_state"/>
 
                 <Button android:id="@+id/o_button"
-                        android:text="お"
                         android:layout_weight="1"
                         android:layout_margin="1dp"
                         android:background="@drawable/kana_button_state"/>
