@@ -21,61 +21,58 @@
     <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="30dp"
-            android:layout_marginRight="8dp">
+            android:layout_marginEnd="8dp">
 
         <TextView
+                android:text=""
                 android:layout_height="match_parent"
                 android:layout_width="0dp"
                 android:layout_weight="1"
-                android:textSize="20sp"
-                android:gravity="center"/>
+                android:minHeight="36dp"
+                android:gravity="center"
+                android:textSize="20sp"/>
 
         <TextView
                 android:text="a"
                 android:layout_height="match_parent"
                 android:layout_width="0dp"
                 android:layout_weight="1"
-                android:textSize="20sp"
-                android:gravity="center"/>
+                style="@style/KanaVowel"/>
 
         <TextView
                 android:text="i"
                 android:layout_height="match_parent"
                 android:layout_width="0dp"
                 android:layout_weight="1"
-                android:textSize="20sp"
-                android:gravity="center"/>
+                style="@style/KanaVowel"/>
 
         <TextView
                 android:text="u"
                 android:layout_height="match_parent"
                 android:layout_width="0dp"
                 android:layout_weight="1"
-                android:textSize="20sp"
-                android:gravity="center"/>
+                style="@style/KanaVowel"/>
 
         <TextView
                 android:text="e"
                 android:layout_height="match_parent"
                 android:layout_width="0dp"
                 android:layout_weight="1"
-                android:textSize="20sp"
-                android:gravity="center"/>
+                style="@style/KanaVowel"/>
 
         <TextView
                 android:text="o"
                 android:layout_height="match_parent"
                 android:layout_width="0dp"
                 android:layout_weight="1"
-                android:textSize="20sp"
-                android:gravity="center"/>
+                style="@style/KanaVowel"/>
 
     </LinearLayout>
 
     <ScrollView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginRight="8dp">
+            android:layout_marginEnd="8dp">
 
         <TableLayout
                 android:layout_width="match_parent"
@@ -84,347 +81,91 @@
 
             <TableRow>
 
-                <Button
+                <TextView
                         android:text="-"
                         android:layout_weight="1"
-                        android:layout_margin="1dp"/>
-
-                <Space
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:layout_margin="1dp"/>
-
-                <Space
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:layout_margin="1dp"/>
-
-                <Space
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:layout_margin="1dp"/>
-
-                <Space
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:layout_margin="1dp"/>
-
-                <Space
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:layout_margin="1dp"/>
+                        style="@style/KanaCapital"/>
+                <Space  style="@style/KanaSpace"/>
+                <Space  style="@style/KanaSpace"/>
+                <Space  style="@style/KanaSpace"/>
+                <Space  style="@style/KanaSpace"/>
+                <Space  style="@style/KanaSpace"/>
 
             </TableRow>
 
             <TableRow>
 
-                <Button
+                <TextView
                         android:text="-"
                         android:layout_weight="1"
-                        android:layout_margin="1dp"/>
-
-                <Space
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:layout_margin="1dp"/>
-
-                <Space
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:layout_margin="1dp"/>
-
-                <Space
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:layout_margin="1dp"/>
-
-                <Space
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:layout_margin="1dp"/>
-
-                <Space
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:layout_margin="1dp"/>
+                        style="@style/KanaCapital"/>
+                <Space  style="@style/KanaSpace"/>
+                <Space  style="@style/KanaSpace"/>
+                <Space  style="@style/KanaSpace"/>
+                <Space  style="@style/KanaSpace"/>
+                <Space  style="@style/KanaSpace"/>
 
             </TableRow>
 
             <TableRow>
 
-                <Button
+                <TextView
                         android:text="-"
                         android:layout_weight="1"
-                        android:layout_margin="1dp"/>
-
-                <Space
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:layout_margin="1dp"/>
-
-                <Space
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:layout_margin="1dp"/>
-
-                <Space
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:layout_margin="1dp"/>
-
-                <Space
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:layout_margin="1dp"/>
-
-                <Space
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:layout_margin="1dp"/>
+                        style="@style/KanaCapital"/>
+                <Space  style="@style/KanaSpace"/>
+                <Space  style="@style/KanaSpace"/>
+                <Space  style="@style/KanaSpace"/>
+                <Space  style="@style/KanaSpace"/>
+                <Space  style="@style/KanaSpace"/>
 
             </TableRow>
 
             <TableRow>
 
-                <Button
+                <TextView
                         android:text="-"
                         android:layout_weight="1"
-                        android:layout_margin="1dp"/>
-
-                <Space
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:layout_margin="1dp"/>
-
-                <Space
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:layout_margin="1dp"/>
-
-                <Space
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:layout_margin="1dp"/>
-
-                <Space
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:layout_margin="1dp"/>
-
-                <Space
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:layout_margin="1dp"/>
+                        style="@style/KanaCapital"/>
+                <Space  style="@style/KanaSpace"/>
+                <Space  style="@style/KanaSpace"/>
+                <Space  style="@style/KanaSpace"/>
+                <Space  style="@style/KanaSpace"/>
+                <Space  style="@style/KanaSpace"/>
 
             </TableRow>
 
             <TableRow>
 
-                <Button
+                <TextView
                         android:text="-"
                         android:layout_weight="1"
-                        android:layout_margin="1dp"/>
-
-                <Space
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:layout_margin="1dp"/>
-
-                <Space
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:layout_margin="1dp"/>
-
-                <Space
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:layout_margin="1dp"/>
-
-                <Space
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:layout_margin="1dp"/>
-
-                <Space
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:layout_margin="1dp"/>
+                        style="@style/KanaCapital"/>
+                <Space  style="@style/KanaSpace"/>
+                <Space  style="@style/KanaSpace"/>
+                <Space  style="@style/KanaSpace"/>
+                <Space  style="@style/KanaSpace"/>
+                <Space  style="@style/KanaSpace"/>
 
             </TableRow>
 
             <TableRow>
 
-                <Button
+                <TextView
                         android:id="@+id/pa_gyou_button"
-                        android:text="ぱ行"
+                        android:text="P"
                         android:layout_weight="1"
-                        android:layout_margin="1dp"/>
-
-                <Button
-                        android:id="@+id/pa_button"
-                        android:layout_weight="1"
-                        android:layout_margin="1dp"
-                        android:background="@drawable/kana_button_state"/>
-
-                <Button
-                        android:id="@+id/pi_button"
-                        android:layout_weight="1"
-                        android:layout_margin="1dp"
-                        android:background="@drawable/kana_button_state"/>
-
-                <Button
-                        android:id="@+id/pu_button"
-                        android:layout_weight="1"
-                        android:layout_margin="1dp"
-                        android:background="@drawable/kana_button_state"/>
-
-                <Button
-                        android:id="@+id/pe_button"
-                        android:layout_weight="1"
-                        android:layout_margin="1dp"
-                        android:background="@drawable/kana_button_state"/>
-
-                <Button
-                        android:id="@+id/po_button"
-                        android:layout_weight="1"
-                        android:layout_margin="1dp"
-                        android:background="@drawable/kana_button_state"/>
-
-            </TableRow>
-
-            <TableRow>
-
-                <Button
-                        android:text="-"
-                        android:layout_weight="1"
-                        android:layout_margin="1dp"/>
-
-                <Space
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:layout_margin="1dp"/>
-
-                <Space
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:layout_margin="1dp"/>
-
-                <Space
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:layout_margin="1dp"/>
-
-                <Space
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:layout_margin="1dp"/>
-
-                <Space
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:layout_margin="1dp"/>
-
-            </TableRow>
-
-            <TableRow>
-
-                <Button
-                        android:text="-"
-                        android:layout_weight="1"
-                        android:layout_margin="1dp"/>
-
-                <Space
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:layout_margin="1dp"/>
-
-                <Space
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:layout_margin="1dp"/>
-
-                <Space
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:layout_margin="1dp"/>
-
-                <Space
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:layout_margin="1dp"/>
-
-                <Space
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:layout_margin="1dp"/>
-
-            </TableRow>
-
-            <TableRow>
-
-                <Button
-                        android:text="-"
-                        android:layout_weight="1"
-                        android:layout_margin="1dp"/>
-
-                <Space
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:layout_margin="1dp"/>
-
-                <Space
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:layout_margin="1dp"/>
-
-                <Space
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:layout_margin="1dp"/>
-
-                <Space
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:layout_margin="1dp"/>
-
-                <Space
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:layout_margin="1dp"/>
-
-            </TableRow>
-
-            <TableRow>
-
-                <Button
-                        android:text="-"
-                        android:layout_weight="1"
-                        android:layout_margin="1dp"/>
-
-                <Space
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:layout_margin="1dp"/>
-
-                <Space
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:layout_margin="1dp"/>
-
-                <Space
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:layout_margin="1dp"/>
-
-                <Space
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:layout_margin="1dp"/>
-
-                <Space
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:layout_margin="1dp"/>
+                        style="@style/KanaCapital"/>
+                <Button style="@style/KanaButton"
+                        android:id="@+id/pa_button"/>
+                <Button style="@style/KanaButton"
+                        android:id="@+id/pi_button"/>
+                <Button style="@style/KanaButton"
+                        android:id="@+id/pu_button"/>
+                <Button style="@style/KanaButton"
+                        android:id="@+id/pe_button"/>
+                <Button style="@style/KanaButton"
+                        android:id="@+id/po_button"/>
 
             </TableRow>
 

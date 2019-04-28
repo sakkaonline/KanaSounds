@@ -218,7 +218,8 @@ class Chart1Activity : AppCompatActivity() {
         }
 
         // load が終わってから
-        soundpool.setOnLoadCompleteListener(SoundPool.OnLoadCompleteListener { soundPool, sampleId, status ->
+        soundpool.setOnLoadCompleteListener(SoundPool.OnLoadCompleteListener {
+                soundpool, sampleId, status ->
             for (i in mButtons.indices) {
                 mButtons[i].setOnClickListener {
                     soundpool.play(chart1SetVoiceIds[i], 1.0f, 1.0f, 0, 0, 1.0f)

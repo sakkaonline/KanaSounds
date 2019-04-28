@@ -7,4 +7,28 @@
         <item name="colorAccent">#FFD600</item>
     </style>
 
+    <style name="KanaVowel" parent="@android:style/Widget.TextView">
+        <item name="android:minHeight">40dp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <style name="KanaCapital" parent="@android:style/Widget.DeviceDefault.Button.Borderless">
+        <item name="android:layout_weight">1</item>
+        <item name="android:minHeight">30dp</item>
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <style name="KanaButton" parent="@android:style/Widget.DeviceDefault.Button">
+        <item name="android:layout_weight">1</item>
+        <item name="android:layout_margin">1dp</item>
+        <item name="android:minHeight">42dp</item>
+        <item name="android:background">@drawable/kana_button_state</item>
+    </style>
+
+    <style name="KanaSpace">
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_weight">1</item>
+    </style>
+
 </resources>
