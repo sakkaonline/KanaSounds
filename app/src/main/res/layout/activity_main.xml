@@ -95,7 +95,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="start1 ５０音"
     />
 
     <Button
@@ -103,7 +102,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="start2 濁音"
     />
 
     <Button
@@ -111,7 +109,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="start3 半濁音"
     />
 
     <Button
@@ -119,7 +116,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="start4 拗音"
     />
 
     <Button
@@ -127,7 +123,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="start5 拗濁音"
     />
 
     <Button
@@ -135,7 +130,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="start6 半拗濁音"
     />
 
 </LinearLayout>

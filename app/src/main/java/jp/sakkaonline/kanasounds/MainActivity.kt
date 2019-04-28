@@ -11,10 +11,7 @@ import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.View
-import android.widget.AdapterView
-import android.widget.ArrayAdapter
-import android.widget.Button
-import android.widget.Spinner
+import android.widget.*
 
 const val PREFS_NAME = "KanaSoundsSettingsFile"
 const val MenuLanguageKEY = "menu_language"
@@ -37,12 +34,24 @@ const val ROMAJI = 2
 
 val ENGLISH_VoiceTypeList = listOf<String>("Man A", "Man B", "Woman A", "Woman B")
 val ENGLISH_LearningCharacterList = listOf<String>("Hiragana", "Katakana","Ro-ma Ji")
+val ENGLISH_StartButtonList = listOf<String>(
+    "1 Se i sounds","2 Da ku sounds","3 Han Da ku sounds",
+    "4 Yo u sounds", "5 Yo u Da ku sounds", "6 Han Yo u Da ku sounds")
 val JPN_HIRAGANA_VoiceTypeList = listOf<String>("だんせい Ａ", "だんせい Ｂ", "じょせい Ａ", "じょせい Ｂ")
 val JPN_HIRAGANA_LearningCharacterList = listOf<String>("ひらがな", "かたかな","ろーまじ")
+val JPN_HIRAGANA_StartButtonList = listOf<String>(
+    "１　せいおん","２　だくおん","３　はんだくおん",
+    "４　ようおん", "５　ようだくおん", "６　はんようだくおん")
 val JPN_KANJI_VoiceTypeList = listOf<String>("男性 Ａ", "男性 Ｂ", "女性 A", "女性 B")
 val JPN_KANJI_LearningCharacterList = listOf<String>("平仮名", "片仮名","ローマ字")
+val JPN_KANJI_StartButtonList = listOf<String>(
+    "１　清音","２　濁音","３　半濁音",
+    "４　拗音", "５　拗濁音", "６　半拗濁音")
 val JPN_ROMAJI_VoiceTypeList = listOf<String>("Dansei A", "Dansei B", "Jyosei A", "Jyosei B")
 val JPN_ROMAJI_LearningCharacterList = listOf<String>("Hiragana", "Katakana","Ro-ma ji")
+val JPN_ROMAJI_StartButtonList = listOf<String>(
+    "1 Se i on","2 Da ku on","3 Han Da ku on",
+    "4 Yo u on", "5 Yo u Da ku on", "6 Han Yo u Da ku on")
 
 var mMenuLanguage = 0
 var mVoiceType = 0
@@ -50,6 +59,7 @@ var mLearningCharacter = 0
 val mMenuLanguageList = listOf("English", "ひらがな", "漢字", "Ro-ma Ji")
 var mVoiceTypeList = listOf<String>()
 var mLearningCharacterList = listOf<String>()
+var mStartButtonList = ENGLISH_StartButtonList
 
 class MainActivity : AppCompatActivity() {
 
@@ -59,6 +69,30 @@ class MainActivity : AppCompatActivity() {
 
         // initialize (read shared preference and set variables)
         init()
+
+        // Buttons
+        val mButtons = arrayOf(
+            findViewById<Button>(R.id.start_button1),
+            findViewById<Button>(R.id.start_button2),
+            findViewById<Button>(R.id.start_button3),
+            findViewById<Button>(R.id.start_button4),
+            findViewById<Button>(R.id.start_button5),
+            findViewById<Button>(R.id.start_button6)
+        )
+        when (mMenuLanguage){
+            ENGLISH -> mStartButtonList = ENGLISH_StartButtonList
+            JPN_HIRAGANA -> mStartButtonList = JPN_HIRAGANA_StartButtonList
+            JPN_KANJI -> mStartButtonList = JPN_KANJI_StartButtonList
+            JPN_ROMAJI -> mStartButtonList = JPN_ROMAJI_StartButtonList
+            else -> {
+                Toast.makeText(applicationContext, "Please set menu language.",
+                    Toast.LENGTH_LONG).show()
+            }
+        }
+        for (i in mButtons.indices) {
+            mButtons[i].setText(mStartButtonList[i])
+            Log.d("KanaSounds", "button setText $i")
+        }
 
         // Spinners settings
         val mMenuLanguageSpinner = findViewById<View>(R.id.menu_language_spinner) as Spinner
@@ -94,6 +128,20 @@ class MainActivity : AppCompatActivity() {
                 mLearningCharacterSpinnerAdapter.add(mLearningCharacterList[0])
                 mLearningCharacterSpinnerAdapter.add(mLearningCharacterList[1])
                 mLearningCharacterSpinnerAdapter.add(mLearningCharacterList[2])
+                when (mMenuLanguage){
+                    ENGLISH -> mStartButtonList = ENGLISH_StartButtonList
+                    JPN_HIRAGANA -> mStartButtonList = JPN_HIRAGANA_StartButtonList
+                    JPN_KANJI -> mStartButtonList = JPN_KANJI_StartButtonList
+                    JPN_ROMAJI -> mStartButtonList = JPN_ROMAJI_StartButtonList
+                    else -> {
+                        Toast.makeText(applicationContext, "Please set menu language.",
+                            Toast.LENGTH_LONG).show()
+                    }
+                }
+                for (i in mButtons.indices) {
+                    mButtons[i].setText(mStartButtonList[i])
+                    Log.d("KanaSounds", "button setText $i")
+                }
             }
         }
 
@@ -155,6 +203,18 @@ class MainActivity : AppCompatActivity() {
 
     override fun onResume() {
         super.onResume()
+
+        // Buttons
+        val mButtons = arrayOf(
+            findViewById<View>(R.id.start_button1) as Button,
+            findViewById<View>(R.id.start_button2) as Button,
+            findViewById<View>(R.id.start_button3) as Button,
+            findViewById<View>(R.id.start_button4) as Button,
+            findViewById<View>(R.id.start_button5) as Button,
+            findViewById<View>(R.id.start_button6) as Button)
+
+        init()
+
     }
 
     override fun onDestroy() {
@@ -162,13 +222,16 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun init(){
+
         val settings = getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE)
         mMenuLanguage = settings.getInt(MenuLanguageKEY, JPN_HIRAGANA)
         mVoiceType = settings.getInt(VoiceTypeKEY, MAN_A)
         mLearningCharacter = settings.getInt(LearningCharacterKEY, HIRAGANA)
+
         if (mMenuLanguage == ENGLISH) {
             mVoiceTypeList = ENGLISH_VoiceTypeList
             mLearningCharacterList = ENGLISH_LearningCharacterList
+
         } else if (mMenuLanguage == JPN_HIRAGANA) {
             mVoiceTypeList = JPN_HIRAGANA_VoiceTypeList
             mLearningCharacterList = JPN_HIRAGANA_LearningCharacterList
@@ -179,6 +242,7 @@ class MainActivity : AppCompatActivity() {
             mVoiceTypeList = JPN_ROMAJI_VoiceTypeList
             mLearningCharacterList = JPN_ROMAJI_LearningCharacterList
         }
+
         Log.d("KanaSounds", "init() done")
     }
 

@@ -15,7 +15,6 @@ import android.widget.Toast
 import android.widget.Toast.LENGTH_SHORT
 
 // Lists for this activity
-
 val chart1HiraganaList: List<String> = listOf(
     "あ", "い", "う", "え", "お","か", "き", "く", "け", "こ",
     "さ", "し", "す", "せ", "そ","た", "ち", "つ", "て", "と",
@@ -34,7 +33,6 @@ val chart1RomajiList: List<String> = listOf(
     "Na", "Ni", "Nu", "Ne", "No","Ha", "Hi", "Hu", "He", "Ho",
     "Ma", "Mi", "Mu", "Me", "Mo","Ya", "Yu", "Yo",
     "Ra", "Ri", "Ru", "Re", "Ro","Wa", "Wo", "N")
-
 val chart1ManAList: MutableList<Int> = mutableListOf(
     R.raw.man_a_a, R.raw.man_a_i, R.raw.man_a_u, R.raw.man_a_e, R.raw.man_a_o,
     R.raw.man_a_ka, R.raw.man_a_ki, R.raw.man_a_ku, R.raw.man_a_ke, R.raw.man_a_ko,
@@ -123,6 +121,16 @@ class Chart1Activity : AppCompatActivity() {
         setSupportActionBar(toolbar1)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
+        when (mMenuLanguage){
+            ENGLISH -> setTitle( ENGLISH_StartButtonList[0] )
+            JPN_HIRAGANA -> setTitle( JPN_HIRAGANA_StartButtonList[0])
+            JPN_KANJI -> setTitle(JPN_KANJI_StartButtonList[0])
+            JPN_ROMAJI -> setTitle(JPN_ROMAJI_StartButtonList[0])
+            else -> {
+                Toast.makeText(applicationContext, "Please back to home and set menu language.",
+                    Toast.LENGTH_LONG).show()
+            }
+        }
         when (mVoiceType){
             MAN_A -> chart1SetVoiceList = chart1ManAList
             MAN_B -> chart1SetVoiceList = chart1ManBList
@@ -142,17 +150,17 @@ class Chart1Activity : AppCompatActivity() {
                     Toast.LENGTH_LONG).show()
             }
         }
-        Log.d("KanaSounds", "onCreate finished")
+        Log.d("KanaSounds", "chart1 onCreate finished")
     }
 
     override fun onResume() {
         super.onResume()
-        Log.d("KanaSounds", "resume Chart1")
+
         soundpool = SoundPool.Builder()
             .setAudioAttributes(audioattributes)
             .setMaxStreams(2)
             .build()
-        // Buttons
+
         val mButtons = arrayOf(
             findViewById<View>(R.id.a_button) as Button,
             findViewById<View>(R.id.i_button) as Button,
@@ -206,25 +214,29 @@ class Chart1Activity : AppCompatActivity() {
             mButtons[i].setText(chart1SetKanaList[i])
             chart1SetVoiceIds.add(i, soundpool.load(this, chart1SetVoiceList[i], 1))
             // load
-            Log.d("KanaSounds", "set buttons $i")
+            Log.d("KanaSounds", "loard $i")
         }
 
         // load が終わってから
         soundpool.setOnLoadCompleteListener(SoundPool.OnLoadCompleteListener { soundPool, sampleId, status ->
             for (i in mButtons.indices) {
                 mButtons[i].setOnClickListener {
-                    Log.d("KanaSounds", "$i")
                     soundpool.play(chart1SetVoiceIds[i], 1.0f, 1.0f, 0, 0, 1.0f)
+                    Log.d("KanaSounds", "set $i")
                 }
             }
         })
+
+        Log.d("KanaSounds", "resume Chart1")
     }
 
     override fun onPause() {
         super.onPause()
-        Log.d("KanaSounds", "pause Chart1")
+
         soundpool.release();
         soundpool = null;
+
+        Log.d("KanaSounds", "pause Chart1")
     }
 
 }
