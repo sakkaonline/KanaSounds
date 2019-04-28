@@ -1,7 +1,12 @@
 package jp.sakkaonline.kanasounds
 
+import android.annotation.TargetApi
 import android.content.Context
 import android.content.Intent
+import android.media.AudioAttributes
+import android.media.AudioManager
+import android.media.SoundPool
+import android.os.Build
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -45,7 +50,6 @@ var mLearningCharacter = 0
 val mMenuLanguageList = listOf("English", "ひらがな", "漢字", "Ro-ma Ji")
 var mVoiceTypeList = listOf<String>()
 var mLearningCharacterList = listOf<String>()
-
 
 class MainActivity : AppCompatActivity() {
 
@@ -123,35 +127,38 @@ class MainActivity : AppCompatActivity() {
         }
 
         // Buttons
-        val mStartButton1 = findViewById<View>(R.id.start_button1) as Button
-        mStartButton1.setOnClickListener {
+        findViewById<Button>(R.id.start_button1).setOnClickListener(){
             val intent = Intent(this, Chart1Activity::class.java)
-            startActivity(intent) }
-        val mStartButton2 = findViewById<Button>(R.id.start_button2) as Button
-        mStartButton2.setOnClickListener {
+            startActivity(intent)
+        }
+        findViewById<Button>(R.id.start_button2).setOnClickListener(){
             val intent = Intent(this, Chart2Activity::class.java)
-            startActivity(intent) }
-        val mStartButton3 = findViewById<Button>(R.id.start_button3) as Button
-        mStartButton3.setOnClickListener {
+            startActivity(intent)
+        }
+        findViewById<Button>(R.id.start_button3).setOnClickListener(){
             val intent = Intent(this, Chart3Activity::class.java)
-            startActivity(intent) }
-        val mStartButton4 = findViewById<Button>(R.id.start_button4) as Button
-        mStartButton4.setOnClickListener {
+            startActivity(intent)
+        }
+        findViewById<Button>(R.id.start_button4).setOnClickListener(){
             val intent = Intent(this, Chart4Activity::class.java)
-            startActivity(intent) }
-        val mStartButton5 = findViewById<Button>(R.id.start_button5) as Button
-        mStartButton5.setOnClickListener {
+            startActivity(intent)
+        }
+        findViewById<Button>(R.id.start_button5).setOnClickListener(){
             val intent = Intent(this, Chart5Activity::class.java)
-            startActivity(intent) }
-        val mStartButton6 = findViewById<Button>(R.id.start_button6) as Button
-        mStartButton6.setOnClickListener {
+            startActivity(intent)
+        }
+        findViewById<Button>(R.id.start_button6).setOnClickListener(){
             val intent = Intent(this, Chart6Activity::class.java)
-            startActivity(intent) }
+            startActivity(intent)
+        }
     }
 
     override fun onResume() {
         super.onResume()
+    }
 
+    override fun onDestroy() {
+        super.onDestroy()
     }
 
     fun init(){
@@ -211,7 +218,6 @@ class MainActivity : AppCompatActivity() {
         editor.commit()
         Log.d("KanaSounds", "changeLearningCharacter() done : $mLearningCharacter")
     }
+
+
 }
-
-
-

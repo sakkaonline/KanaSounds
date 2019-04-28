@@ -26,12 +26,12 @@ class Chart6Activity : AppCompatActivity() {
     }
 
     override fun onOptionsItemSelected(item: MenuItem)= when (item.itemId) {
-        R.id.action_back -> {
+        R.id.action_prev -> {
             val intent = Intent(this, Chart5Activity::class.java)
             startActivity(intent)
             true
         }
-        R.id.action_go -> {
+        R.id.action_next -> {
             val intent = Intent(this, Chart1Activity::class.java)
             startActivity(intent)
             true

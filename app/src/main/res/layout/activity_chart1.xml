@@ -131,34 +131,29 @@
 
                 <Button
                         android:id="@+id/ka_button"
-                        android:text="か"
                         android:layout_weight="1"
                         android:layout_margin="1dp"
                         android:background="@drawable/kana_button_state"/>
 
                 <Button
                         android:id="@+id/ki_button"
-                        android:text="き"
                         android:layout_weight="1"
                         android:layout_margin="1dp"
                         android:background="@drawable/kana_button_state"/>
 
                 <Button android:id="@+id/ku_button"
-                        android:text="く"
                         android:layout_weight="1"
                         android:layout_margin="1dp"
                         android:background="@drawable/kana_button_state"/>
 
                 <Button
                         android:id="@+id/ke_button"
-                        android:text="け"
                         android:layout_weight="1"
                         android:layout_margin="1dp"
                         android:background="@drawable/kana_button_state"/>
 
                 <Button
                         android:id="@+id/ko_button"
-                        android:text="こ"
                         android:layout_weight="1"
                         android:layout_margin="1dp"
                         android:background="@drawable/kana_button_state"/>
@@ -175,34 +170,29 @@
 
                 <Button
                         android:id="@+id/sa_button"
-                        android:text="さ"
                         android:layout_weight="1"
                         android:layout_margin="1dp"
                         android:background="@drawable/kana_button_state"/>
 
                 <Button
                         android:id="@+id/si_button"
-                        android:text="し"
                         android:layout_weight="1"
                         android:layout_margin="1dp"
                         android:background="@drawable/kana_button_state"/>
 
                 <Button
                         android:id="@+id/su_button"
-                        android:text="す"
                         android:layout_weight="1"
                         android:layout_margin="1dp"
                         android:background="@drawable/kana_button_state"/>
 
                 <Button android:id="@+id/se_button"
-                        android:text="せ"
                         android:layout_weight="1"
                         android:layout_margin="1dp"
                         android:background="@drawable/kana_button_state"/>
 
                 <Button
                         android:id="@+id/so_button"
-                        android:text="そ"
                         android:layout_weight="1"
                         android:layout_margin="1dp"
                         android:background="@drawable/kana_button_state"/>
@@ -219,35 +209,30 @@
 
                 <Button
                         android:id="@+id/ta_button"
-                        android:text="た"
                         android:layout_weight="1"
                         android:layout_margin="1dp"
                         android:background="@drawable/kana_button_state"/>
 
                 <Button
                         android:id="@+id/ti_button"
-                        android:text="ち"
                         android:layout_weight="1"
                         android:layout_margin="1dp"
                         android:background="@drawable/kana_button_state"/>
 
                 <Button
                         android:id="@+id/tu_button"
-                        android:text="つ"
                         android:layout_weight="1"
                         android:layout_margin="1dp"
                         android:background="@drawable/kana_button_state"/>
 
                 <Button
                         android:id="@+id/te_button"
-                        android:text="て"
                         android:layout_weight="1"
                         android:layout_margin="1dp"
                         android:background="@drawable/kana_button_state"/>
 
                 <Button
                         android:id="@+id/to_button"
-                        android:text="と"
                         android:layout_weight="1"
                         android:layout_margin="1dp"
                         android:background="@drawable/kana_button_state"/>
@@ -264,35 +249,30 @@
 
                 <Button
                         android:id="@+id/na_button"
-                        android:text="な"
                         android:layout_weight="1"
                         android:layout_margin="1dp"
                         android:background="@drawable/kana_button_state"/>
 
                 <Button
                         android:id="@+id/ni_button"
-                        android:text="に"
                         android:layout_weight="1"
                         android:layout_margin="1dp"
                         android:background="@drawable/kana_button_state"/>
 
                 <Button
                         android:id="@+id/nu_button"
-                        android:text="ぬ"
                         android:layout_weight="1"
                         android:layout_margin="1dp"
                         android:background="@drawable/kana_button_state"/>
 
                 <Button
                         android:id="@+id/ne_button"
-                        android:text="ね"
                         android:layout_weight="1"
                         android:layout_margin="1dp"
                         android:background="@drawable/kana_button_state"/>
 
                 <Button
                         android:id="@+id/no_button"
-                        android:text="の"
                         android:layout_weight="1"
                         android:layout_margin="1dp"
                         android:background="@drawable/kana_button_state"/>
